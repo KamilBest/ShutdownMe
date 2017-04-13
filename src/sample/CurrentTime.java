@@ -2,7 +2,6 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.text.SimpleDateFormat;
@@ -18,8 +17,6 @@ public class CurrentTime implements Runnable {
     {
         this.currentTimeField=currentTimeField;
     }
-
-
 
     @Override
         public void run() {

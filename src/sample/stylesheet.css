@@ -1,0 +1,15 @@
+.button {
+    -fx-background-color: orange;
+    -fx-border-style: solid;
+    -fx-border-color: darkgray;
+    -fx-border-width: 3;
+
+}
+
+.button:hover {
+    -fx-background-color: yellow;
+}
+
+.button:armed {
+    -fx-background-color: white;
+}
