@@ -36,16 +36,16 @@
                </font>
             </Button>
             <Slider fx:id="timeSlider" blockIncrement="1.0" layoutX="64.0" layoutY="155.0" majorTickUnit="1.0"
-                    max="24.0" minorTickCount="1" onMouseClicked="#sliderValueSetter" prefHeight="16.0"
+                    max="24.0" minorTickCount="0" onMouseClicked="#sliderValueSetter" prefHeight="16.0"
                     prefWidth="428.0" showTickLabels="true" showTickMarks="true" snapToTicks="true"/>
-            <TextField fx:id="timerValueField" layoutX="202.0" layoutY="227.0" prefHeight="25.0" prefWidth="128.0"/>
+            <TextField fx:id="timerValueTextField" layoutX="202.0" layoutY="227.0" prefHeight="25.0" prefWidth="128.0"/>
             <Label layoutX="216.0" layoutY="204.0" text="Value in minutes:" />
-            <Label fx:id="timerLabel" layoutX="239.0" layoutY="110.0">
+            <Label fx:id="remainingTimeLabel" layoutX="239.0" layoutY="110.0">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="currentTimeField" layoutX="410.0" layoutY="21.0" prefHeight="25.0" prefWidth="112.0" />
+            <TextField fx:id="currentTimeTextField" layoutX="410.0" layoutY="21.0" prefHeight="25.0" prefWidth="112.0"/>
             <Label layoutX="216.0" layoutY="89.0" text="Computer will be shutdown in:"/>
          </children>
       </AnchorPane>
