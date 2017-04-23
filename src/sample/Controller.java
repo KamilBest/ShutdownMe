@@ -17,7 +17,7 @@ public class Controller implements Initializable {
     @FXML
     private Slider timeSlider;
     @FXML
-    private Label timerLabel;
+    private Label remainingTimeLabel;
 
     /**
      * contains selected time in hour to shutdown from slider
@@ -44,7 +44,7 @@ public class Controller implements Initializable {
     public void sliderValueSetter() {
         sliderValue = (long) timeSlider.getValue();
         timerValueTextField.setText(String.valueOf(sliderValue + " hour"));
-        timerLabel.setText(String.valueOf(sliderValue + " hour"));
+        remainingTimeLabel.setText(String.valueOf(sliderValue + " hour"));
     }
 
     /**
@@ -52,14 +52,17 @@ public class Controller implements Initializable {
      * Runs thread to display remaining time.
      * Disables slider.
      */
-    public void setShutdown() {
-        Shutdown shutdown = new Shutdown();
-        shutdown.setShutdown(sliderValue);
-        RemainingTime remainingTime = new RemainingTime(timerLabel);
+    public void setOperation() {
+
+
+        RemainingTime remainingTime = new RemainingTime(remainingTimeLabel);
         remainingTime.setTimer(sliderValue);
         Runnable remainingTimeRunnable = remainingTime;
         Thread remainingTimeThread = new Thread(remainingTimeRunnable);
         remainingTimeThread.start();
+        SystemOperation systemOperation = new SystemOperation();
+        systemOperation.setShutdown(sliderValue);
+
         timeSlider.setDisable(true);
     }
 
@@ -69,7 +72,7 @@ public class Controller implements Initializable {
      */
     public void cancelShutdown() {
         timeSlider.setDisable(false);
-        Shutdown shutdown = new Shutdown();
-        shutdown.cancelShutdown();
+        SystemOperation systemOperation = new SystemOperation();
+        systemOperation.cancelOperation();
     }
 }
