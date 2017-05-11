@@ -1,15 +1,97 @@
 .button {
-    -fx-background-color: orange;
-    -fx-border-style: solid;
-    -fx-border-color: darkgray;
-    -fx-border-width: 3;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.window {
+    -fx-background-color: #1a1a1a;
+}
+
+.centerPane {
+
+    -fx-background-color: linear-gradient(to bottom, #323232, #1a1a1a);
 
 }
 
-.button:hover {
-    -fx-background-color: yellow;
+.windowButtons {
+
+    -fx-font-size: 14px;
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: Arial;
+    -fx-font-weight: 300;
+    -fx-text-fill: white;
+
 }
 
-.button:armed {
-    -fx-background-color: white;
+.windowButtons:hover {
+    -fx-background-color: #333;
+}
+
+.windowButtons:pressed {
+    -fx-background-color: #292929;
+}
+
+.closeButton:hover {
+    -fx-background-color: #E90000;
+}
+
+.closeButton:pressed {
+    -fx-background-color: #990000;
+}
+
+.label {
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #fff;
+}
+
+.runButton {
+
+    -fx-background-color: #1a1a1a;
+
+}
+
+.runButton:hover {
+
+    -fx-background-color: #62D000;
+
+}
+
+.runButton:pressed {
+
+    -fx-background-color: #418900;
+
+}
+
+.cancelButton {
+    -fx-background-color: #1a1a1a;
+}
+
+.cancelButton:hover {
+    -fx-background-color: #E90000;
+}
+
+.cancelButton:pressed {
+    -fx-background-color: #990000;
+}
+
+.remainingTimeLabelOff {
+    -fx-font-family: System;
+    -fx-font-size: 45px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+
+.remainingTimeLabelOn {
+    -fx-font-family: System;
+    -fx-font-size: 45px;
+    -fx-text-fill: #62D000;
+    -fx-font-weight: bold;
+}
+
+.footer {
+    -fx-background-color: #323232;
+
 }

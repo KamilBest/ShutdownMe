@@ -13,16 +13,15 @@ import java.util.concurrent.TimeUnit;
  * Created by kamil on 4/13/17.
  */
 public class RemainingTime implements Runnable {
+    boolean isTimerActive = true;
     /**
      * Contains system current time.
      */
     private long currentTime;
-
     /**
      * Contains the time after the addition hours to shutdown system.
      */
     private long shutdownTime;
-
     @FXML
     private Label remainingTimeLabel;
 
@@ -38,6 +37,15 @@ public class RemainingTime implements Runnable {
     public void setTimer(long value) {
         currentTime = System.currentTimeMillis();
         shutdownTime = currentTime + (value * 3600 * 1000);
+        isTimerActive = true;
+    }
+
+    /**
+     * Sets timer message after clicking 'cancel' button
+     */
+    public void resetTimer() {
+        remainingTimeLabel.setText("Timer turned off.");
+        isTimerActive = false;
     }
 
     /**
@@ -75,6 +83,8 @@ public class RemainingTime implements Runnable {
             while (true) {
                 Platform.runLater(() -> remainingTimeLabel.setText(formatTime(calculateRemainingTime())));
                 Thread.sleep(1000);
+                if (isTimerActive == false)
+                    break;
             }
         } catch (Exception e) {
         }

@@ -2,7 +2,7 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,10 +16,10 @@ import java.util.Date;
  */
 public class CurrentTime implements Runnable {
     @FXML
-    private TextField currentTimeTextField;
+    private Label currentTimeLabel;
 
-    public CurrentTime(TextField currentTimeTextField) {
-        this.currentTimeTextField = currentTimeTextField;
+    public CurrentTime(Label currentTimeLabel) {
+        this.currentTimeLabel = currentTimeLabel;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class CurrentTime implements Runnable {
             while (true) {
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
                 String dateString = simpleDateFormat.format(new Date());
-                Platform.runLater(() -> currentTimeTextField.setText(dateString));
+                Platform.runLater(() -> currentTimeLabel.setText(dateString));
                 Thread.sleep(1000);
             }
         } catch (Exception e) {
